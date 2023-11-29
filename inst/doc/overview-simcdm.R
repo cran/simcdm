@@ -1,7 +1,7 @@
-## ----load-r-pkg----------------------------------------------------------
+## ----load-r-pkg---------------------------------------------------------------
 library(simcdm)
 
-## ----setup-matrix-sims---------------------------------------------------
+## ----setup-matrix-sims--------------------------------------------------------
 # Set a seed for reproducibility
 set.seed(888)
 
@@ -10,7 +10,7 @@ N = 15   # Number of Examinees / Subjects
 J = 10   # Number of Items
 K = 2    # Number of Skills / Attributes
 
-## ----sim-q-matrix--------------------------------------------------------
+## ----sim-q-matrix-------------------------------------------------------------
 # Set a seed for reproducibility
 set.seed(1512)
 
@@ -18,7 +18,7 @@ set.seed(1512)
 Q = sim_q_matrix(J, K)
 Q
 
-## ----sim-eta-matrix------------------------------------------------------
+## ----sim-eta-matrix-----------------------------------------------------------
 # Set a seed for reproducibility
 set.seed(4421)
 
@@ -26,12 +26,12 @@ set.seed(4421)
 eta = sim_eta_matrix(K, J, Q)
 eta
 
-## ----attribute-classes-gen-----------------------------------------------
+## ----attribute-classes-gen----------------------------------------------------
 # Create a listing of all attribute classes 
 class_alphas = attribute_classes(K)
 class_alphas
 
-## ----sim-subject-attributes----------------------------------------------
+## ----sim-subject-attributes---------------------------------------------------
 # Set a seed for reproducibility
 set.seed(5126)
 
@@ -42,7 +42,7 @@ subject_alphas
 # Equivalent to:
 # subject_alphas = class_alphas[sample(2 ^ K, N, replace = TRUE),]
 
-## ----setup-sim-dina------------------------------------------------------
+## ----setup-sim-dina-----------------------------------------------------------
 # Set a seed for reproducibility
 set.seed(888)
 
@@ -60,7 +60,7 @@ Q = sim_q_matrix(J, K)
 # Simulate subject attributes
 subject_alphas = sim_subject_attributes(N, K)
 
-## ----sim-dina-items------------------------------------------------------
+## ----sim-dina-items-----------------------------------------------------------
 # Set a seed for reproducibility
 set.seed(2019)
 
@@ -68,7 +68,7 @@ set.seed(2019)
 items_dina = sim_dina_items(subject_alphas, Q, ss, gs)
 items_dina
 
-## ----sim-dina-attributes-------------------------------------------------
+## ----sim-dina-attributes------------------------------------------------------
 # Set a seed for reproducibility
 set.seed(51823)
 
@@ -76,7 +76,7 @@ set.seed(51823)
 attributes = sim_dina_attributes(subject_alphas, Q)
 attributes
 
-## ----rrum-sim-setup------------------------------------------------------
+## ----rrum-sim-setup-----------------------------------------------------------
 # Set a seed for reproducibility
 set.seed(888)
 
@@ -105,7 +105,7 @@ subject_alphas = sim_subject_attributes(N, K, prob = pis)
 # class_alphas = attribute_classes(K)
 # subject_alphas = class_alphas[sample(2 ^ K, N, replace = TRUE, prob = pis),]
 
-## ----sim-rrum------------------------------------------------------------
+## ----sim-rrum-----------------------------------------------------------------
 # Set a seed for reproducibility
 set.seed(912)
 
